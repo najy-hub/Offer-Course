@@ -63,6 +63,17 @@
       color: #ffba00;
       font-weight: bold;
     }
+.digital-timer {
+  font-size: 48px;
+  font-weight: bold;
+  color: #ffba00;
+  background: #1f1f1f;
+  padding: 20px 40px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 30px;
+  box-shadow: 0 0 20px rgba(255, 186, 0, 0.3);
+}
 
     #expired-message {
       font-size: 24px;
@@ -112,7 +123,7 @@
   </section>
 
   <section id="video">
-    <div id="countdown">جاري التحميل...</div>
+<div id="countdown" class="digital-timer">00:00:00</div>
 
     <div id="video-container">
       <iframe width="800" height="450"
@@ -129,41 +140,41 @@
     &copy; 2025 جميع الحقوق محفوظة - رحلة المهندس المحترف
   </footer>
 
-  <script>
-    function startCountdown() {
-      const countdownEl = document.getElementById("countdown");
-      const videoContainer = document.getElementById("video-container");
-      const expiredMessage = document.getElementById("expired-message");
+<script>
+  function startCountdown() {
+    const countdownEl = document.getElementById("countdown");
+    const videoContainer = document.getElementById("video-container");
+    const expiredMessage = document.getElementById("expired-message");
 
-      let savedTime = localStorage.getItem("offer_expiry");
-      if (!savedTime) {
-        const expiryTime = new Date().getTime() + 48 * 60 * 60 * 1000;
-        localStorage.setItem("offer_expiry", expiryTime);
-        savedTime = expiryTime;
-      }
-
-      const interval = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = savedTime - now;
-
-        if (distance <= 0) {
-          clearInterval(interval);
-          countdownEl.style.display = "none";
-          videoContainer.style.display = "none";
-          expiredMessage.style.display = "block";
-          return;
-        }
-
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdownEl.textContent = `⏳ الوقت المتبقي: ${hours} ساعة و ${minutes} دقيقة و ${seconds} ثانية`;
-      }, 1000);
+    let savedTime = localStorage.getItem("offer_expiry");
+    if (!savedTime) {
+      const expiryTime = new Date().getTime() + 48 * 60 * 60 * 1000;
+      localStorage.setItem("offer_expiry", expiryTime);
+      savedTime = expiryTime;
     }
 
-    window.onload = startCountdown;
-  </script>
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = savedTime - now;
+
+      if (distance <= 0) {
+        clearInterval(interval);
+        countdownEl.style.display = "none";
+        videoContainer.style.display = "none";
+        expiredMessage.style.display = "block";
+        return;
+      }
+
+      const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+      const minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+
+      countdownEl.textContent = `${hours}:${minutes}:${seconds}`;
+    }, 1000);
+  }
+
+  window.onload = startCountdown;
+</script>
 
 </body>
 </html>
