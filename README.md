@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>عرض خاص - أنظمة التخزين</title>
+  <title>عرض خـــاص -رحلة المهندس المحترف</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
@@ -127,13 +127,13 @@
 
     <div id="video-container">
       <iframe width="800" height="450"
-        src="https://www.youtube.com/embed/zW9ZX-SZKtE"
+        src="https://www.youtube.com/embed/mNPXseyrxMU"
         frameborder="0" allowfullscreen></iframe>
     </div>
 
     <div id="expired-message" style="display:none;">⛔ انتهى العرض، نلقاك في العرض القادم!</div>
 
-    <a href="https://wa.me/201234567890" class="subscribe-button" target="_blank">اشترك الآن عبر واتساب</a>
+    <a href="https://wa.me/201055690849" class="subscribe-button" target="_blank">اشترك الآن عبر واتساب</a>
   </section>
 
   <footer>
