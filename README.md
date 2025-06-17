@@ -142,4 +142,28 @@
         savedTime = expiryTime;
       }
 
-      con
+      const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = savedTime - now;
+
+        if (distance <= 0) {
+          clearInterval(interval);
+          countdownEl.style.display = "none";
+          videoContainer.style.display = "none";
+          expiredMessage.style.display = "block";
+          return;
+        }
+
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownEl.textContent = `⏳ الوقت المتبقي: ${hours} ساعة و ${minutes} دقيقة و ${seconds} ثانية`;
+      }, 1000);
+    }
+
+    window.onload = startCountdown;
+  </script>
+
+</body>
+</html>
