@@ -13,23 +13,20 @@
     font-family: 'Cairo', sans-serif;
   }
 
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Cairo', sans-serif;
+  body {
+    background: #fdf6e3;
+    color: #222;
+    line-height: 1.6;
   }
 
- body {
-  background-color: #fffdf3; /* أبيض مائل للذهبي */
-  color: #2d2d2d; /* رمادي داكن للنص */
-}
-
-header {
-  background-color: #fef6dc; /* ذهبي فاتح */
-  color: #000;
-}
+  header {
+    padding: 20px 40px;
+    background-color: #fff8e1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
 
   header h1 {
     font-size: 24px;
@@ -154,6 +151,7 @@ header {
     margin-top: 60px;
   }
 </style>
+
 
 
 </head>
