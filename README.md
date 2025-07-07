@@ -13,6 +13,14 @@
     font-family: 'Cairo', sans-serif;
   }
 
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+  }
+
   body {
     background: #fdf6e3;
     color: #222;
@@ -151,6 +159,7 @@
     margin-top: 60px;
   }
 </style>
+
 
 </head>
 <body>
