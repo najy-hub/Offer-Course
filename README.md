@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>عرض خـــاص - رحلة المهندس المحترف</title>
+  <title>عرض خاص - رحلة المهندس المحترف</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -14,151 +14,163 @@
     }
 
     body {
-      background: #fffbe6;
+      background-color: #fef9f0;
       color: #333;
       line-height: 1.6;
     }
 
     header {
+      background-color: #fff9e5;
       padding: 20px;
-      background-color: #fff3c4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-bottom: 2px solid #f5d36d;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     header h1 {
       font-size: 24px;
-      color: #4b3f1e;
+      color: #222;
     }
 
     .hero {
-      position: relative;
-      background-image: url('Images/hero.png');
-      background-size: cover;
-      background-position: center;
+      background: url('Images/hero.png') center/cover no-repeat;
       height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-align: center;
+      position: relative;
     }
 
     .hero::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 230, 0.6);
-      z-index: 1;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 800px;
+      color: #fff;
       padding: 20px;
     }
 
     .hero h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #4b3f1e;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
     .hero p {
       font-size: 18px;
-      color: #5e4c1f;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .hero a.button {
-      padding: 12px 30px;
-      background-color: #ffba00;
+      display: inline-block;
+      background-color: #ffc107;
       color: #000;
+      padding: 12px 30px;
       font-weight: bold;
-      border: none;
+      font-size: 18px;
       border-radius: 8px;
       text-decoration: none;
-      font-size: 18px;
       transition: background-color 0.3s;
     }
 
     .hero a.button:hover {
-      background-color: #ffaa00;
+      background-color: #e0a800;
     }
 
     #video {
-      padding: 60px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
-    iframe {
-      max-width: 100%;
-      border-radius: 12px;
-    }
-
-    #countdown {
-      font-size: 28px;
-      margin-bottom: 30px;
-      color: #ff8c00;
-      font-weight: bold;
-    }
-
     .digital-timer {
-      font-size: 48px;
+      font-size: 36px;
       font-weight: bold;
-      color: #ff8c00;
-      background: #fff3c4;
-      padding: 20px 40px;
+      color: #d48806;
+      background: #fff3cd;
+      padding: 20px;
       border-radius: 12px;
       display: inline-block;
-      margin-bottom: 30px;
-      box-shadow: 0 0 20px rgba(255, 186, 0, 0.3);
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    .video-container {
+      position: relative;
+      padding-top: 56.25%;
+      margin-bottom: 20px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 12px;
     }
 
     #expired-message {
-      font-size: 24px;
+      font-size: 22px;
       color: red;
       margin-top: 20px;
       display: none;
     }
 
     .subscribe-button {
-      margin-top: 30px;
-      padding: 15px 30px;
-      background-color: #ffba00;
+      background-color: #ffc107;
       color: #000;
-      border: none;
-      border-radius: 10px;
-      font-size: 18px;
       font-weight: bold;
-      cursor: pointer;
+      font-size: 18px;
+      padding: 14px 28px;
+      border-radius: 10px;
       text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      transition: background 0.3s;
       display: none;
     }
 
     .subscribe-button:hover {
-      background-color: #ffaa00;
+      background-color: #e0a800;
     }
 
     footer {
-      background-color: #fff3c4;
       text-align: center;
+      background-color: #fff1da;
       padding: 20px;
-      color: #333;
       font-size: 14px;
-      margin-top: 60px;
+      color: #555;
+      margin-top: 40px;
     }
 
     @media (max-width: 768px) {
-      .hero h2 { font-size: 28px; }
-      .hero p { font-size: 16px; }
-      .digital-timer { font-size: 36px; padding: 15px 30px; }
-      iframe { width: 100%; height: auto; }
+      .hero h2 {
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero a.button {
+        font-size: 16px;
+        padding: 10px 24px;
+      }
+
+      .digital-timer {
+        font-size: 28px;
+        padding: 16px;
+      }
+
+      .subscribe-button {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
     }
   </style>
 </head>
@@ -170,26 +182,22 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h2>عرض خاص لمدة 48 ساعة</h2>
-      <p>شاهد المحاضرة وابدأ رحلتك نحو احتراف الطاقة الشمسية</p>
-      <a href="#video" class="button">شــاهد الآن</a>
+      <h2>🎁 عرض خاص لمدة 48 ساعة فقط</h2>
+      <p>شاهد المحاضرة الآن وابدأ رحلتك في احتراف الطاقة الشمسية</p>
+      <a href="#video" class="button">ابدأ الآن</a>
     </div>
   </section>
 
   <section id="video">
-    <div id="countdown" class="digital-timer">00:00:00</div>
+    <div class="digital-timer" id="countdown">00:00:00</div>
 
-    <div id="video-container">
-      <div style="position:relative;padding-top:56.25%;">
-        <iframe src="https://iframe.mediadelivery.net/embed/460802/e8b012cb-f646-4d5d-b92d-937b028bdaa2?autoplay=false&loop=false&muted=false&preload=false&responsive=true"
-          loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;"
-          allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe>
-      </div>
+    <div class="video-container" id="video-container">
+      <iframe id="videoFrame" src="https://iframe.mediadelivery.net/embed/460802/e8b012cb-f646-4d5d-b92d-937b028bdaa2?autoplay=false&loop=false&muted=false&preload=true&responsive=true" loading="lazy" allowfullscreen allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"></iframe>
     </div>
 
     <div id="expired-message">⛔ انتهى العرض، نلقاك في العرض القادم!</div>
 
-    <a href="https://wa.me/201055690849" class="subscribe-button" target="_blank">اشترك الآن عبر واتساب</a>
+    <a href="https://wa.me/201055690849" class="subscribe-button" id="subscribeBtn" target="_blank">اشترك الآن عبر واتساب</a>
   </section>
 
   <footer>
@@ -201,7 +209,7 @@
       const countdownEl = document.getElementById("countdown");
       const videoContainer = document.getElementById("video-container");
       const expiredMessage = document.getElementById("expired-message");
-      const subscribeBtn = document.querySelector(".subscribe-button");
+      const subscribeBtn = document.getElementById("subscribeBtn");
 
       let savedTime = localStorage.getItem("offer_expiry");
       if (!savedTime) {
@@ -219,23 +227,29 @@
           countdownEl.style.display = "none";
           videoContainer.style.display = "none";
           expiredMessage.style.display = "block";
+          subscribeBtn.style.display = "none";
           return;
         }
 
-        const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-        const minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-        const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+        const hours = String(Math.floor((distance / (1000 * 60 * 60))) % 24).padStart(2, '0');
+        const minutes = String(Math.floor((distance / (1000 * 60)) % 60)).padStart(2, '0');
+        const seconds = String(Math.floor((distance / 1000) % 60)).padStart(2, '0');
 
         countdownEl.textContent = `${hours}:${minutes}:${seconds}`;
       }, 1000);
-
-      // عرض زر الاشتراك بعد 8 دقائق
-      setTimeout(() => {
-        subscribeBtn.style.display = "inline-block";
-      }, 8 * 60 * 1000); // 8 دقائق = 480,000 مللي ثانية
     }
 
-    window.onload = startCountdown;
+    function showSubscribeAfterDelay() {
+      setTimeout(() => {
+        const subscribeBtn = document.getElementById("subscribeBtn");
+        subscribeBtn.style.display = "inline-block";
+      }, 8 * 60 * 1000); // بعد 8 دقائق
+    }
+
+    window.onload = () => {
+      startCountdown();
+      showSubscribeAfterDelay();
+    };
   </script>
 
 </body>
