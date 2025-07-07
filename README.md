@@ -22,8 +22,8 @@
   }
 
   body {
-    background: #fdf6e3;
-    color: #222;
+    background-color: #fff8e1;
+    color: #333;
     line-height: 1.6;
   }
 
