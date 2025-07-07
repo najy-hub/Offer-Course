@@ -169,19 +169,28 @@
     </div>
   </section>
 
-  <section id="video">
-<div id="countdown" class="digital-timer">00:00:00</div>
+ <section id="video">
+  <div id="countdown" class="digital-timer">00:00:00</div>
 
-    <div id="video-container">
-      <iframe width="800" height="450"
-        src="https://www.youtube.com/embed/mNPXseyrxMU"
-        frameborder="0" allowfullscreen></iframe>
-    </div>
+  <!-- فيديو Bunny.net -->
+  <div class="bunny-video-container">
+    <iframe 
+      id="bunny-player"
+      src="https://iframe.mediadelivery.net/embed/460802/e8b012cb-f646-4d5d-b92d-937b028bdaa2?autoplay=false&muted=false&enableApi=true"
+      allowfullscreen
+      loading="lazy"
+      style="width: 100%; height: 450px; border: none; border-radius: 12px;">
+    </iframe>
+  </div>
 
-    <div id="expired-message" style="display:none;">⛔ انتهى العرض، نلقاك في العرض القادم!</div>
+  <div id="expired-message" style="display:none;">⛔ انتهى العرض، نلقاك في العرض القادم!</div>
 
-    <a href="https://iframe.mediadelivery.net/embed/460802/e8b012cb-f646-4d5d-b92d-937b028bdaa2" class="subscribe-button" target="_blank">اشترك الآن عبر واتساب</a>
-  </section>
+  <!-- زر الاشتراك (مخفي مبدئيًا) -->
+  <a href="https://wa.me/201055690849" class="subscribe-button" target="_blank" id="subscribeBtn" style="display:none;">
+    اشترك الآن عبر واتساب
+  </a>
+</section>
+
 
   <footer>
     &copy; 2025 جميع الحقوق محفوظة - رحلة المهندس المحترف
