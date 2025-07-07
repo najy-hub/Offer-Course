@@ -5,108 +5,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>عرض خـــاص -رحلة المهندس المحترف</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+  }
 
-    body {
-      background: linear-gradient(to right, #0f0f0f, #1c1c1c);
-      color: #ffffff; line-height: 1.6;
-    }
+  body {
+    background: #fdf6e3;
+    color: #222;
+    line-height: 1.6;
+  }
 
-    header {
-      padding: 20px 40px; background-color: #111111d0;
-      display: flex; justify-content: space-between; align-items: center;
-      border-bottom: 1px solid #333;
-    }
+  header {
+    padding: 20px 40px;
+    background-color: #fff8e1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
 
-    header h1 { font-size: 24px; color: #f9f9f9; }
+  header h1 {
+    font-size: 24px;
+    color: #7c5e10;
+  }
 
-    .hero {
-      position: relative;
-      background-image: url('Images/hero.png');
-      background-size: cover; background-position: center;
-      height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center;
-    }
+  .hero {
+    position: relative;
+    background-image: url('Images/hero.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
-    .hero::after {
-      content: ''; position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1;
-    }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(255, 248, 225, 0.6);
+    z-index: 1;
+  }
 
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: 800px; padding: 20px;
-    }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+  }
 
-    .hero h2 { font-size: 36px; margin-bottom: 20px; color: #ffffff; }
-    .hero p { font-size: 18px; color: #dddddd; margin-bottom: 30px; }
+  .hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #7c5e10;
+  }
 
-    .hero a.button {
-      padding: 12px 30px; background-color: #ffba00; color: #000;
-      font-weight: bold; border: none; border-radius: 8px;
-      text-decoration: none; font-size: 18px; transition: background-color 0.3s;
-    }
+  .hero p {
+    font-size: 18px;
+    color: #4a3f25;
+    margin-bottom: 30px;
+  }
 
-    .hero a.button:hover { background-color: #ffaa00; }
+  .hero a.button {
+    padding: 12px 30px;
+    background-color: #ffba00;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
 
-    #video {
-      padding: 60px 20px; text-align: center;
-    }
+  .hero a.button:hover {
+    background-color: #ffaa00;
+  }
 
-    iframe { max-width: 100%; border-radius: 12px; }
+  #video {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fffdf5;
+  }
 
-    #countdown {
-      font-size: 28px;
-      margin-bottom: 30px;
-      color: #ffba00;
-      font-weight: bold;
-    }
-.digital-timer {
-  font-size: 48px;
-  font-weight: bold;
-  color: #ffba00;
-  background: #1f1f1f;
-  padding: 20px 40px;
-  border-radius: 12px;
-  display: inline-block;
-  margin-bottom: 30px;
-  box-shadow: 0 0 20px rgba(255, 186, 0, 0.3);
-}
+  iframe {
+    max-width: 100%;
+    border-radius: 12px;
+  }
 
-    #expired-message {
-      font-size: 24px;
-      color: red;
-      margin-top: 20px;
-    }
+  #countdown {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #aa8800;
+    font-weight: bold;
+  }
 
-    .subscribe-button {
-      margin-top: 30px;
-      padding: 15px 30px;
-      background-color: #ffba00;
-      color: #000;
-      border: none;
-      border-radius: 10px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: none;
-    }
+  .digital-timer {
+    font-size: 48px;
+    font-weight: bold;
+    color: #aa8800;
+    background: #fff3c4;
+    padding: 20px 40px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(170, 136, 0, 0.2);
+  }
 
-    .subscribe-button:hover {
-      background-color: #ffaa00;
-    }
+  #expired-message {
+    font-size: 24px;
+    color: red;
+    margin-top: 20px;
+  }
 
-    footer {
-      background-color: #101010;
-      text-align: center;
-      padding: 20px;
-      color: #666;
-      font-size: 14px;
-      margin-top: 60px;
-    }
-  </style>
+  .subscribe-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #ffba00;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .subscribe-button:hover {
+    background-color: #ffaa00;
+  }
+
+  footer {
+    background-color: #fff3c4;
+    text-align: center;
+    padding: 20px;
+    color: #555;
+    font-size: 14px;
+    margin-top: 60px;
+  }
+</style>
+
 </head>
 <body>
 
