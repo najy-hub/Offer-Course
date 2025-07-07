@@ -180,7 +180,7 @@
 
     <div id="expired-message" style="display:none;">⛔ انتهى العرض، نلقاك في العرض القادم!</div>
 
-    <a href="https://wa.me/201055690849" class="subscribe-button" target="_blank">اشترك الآن عبر واتساب</a>
+    <a href="https://iframe.mediadelivery.net/embed/460802/e8b012cb-f646-4d5d-b92d-937b028bdaa2" class="subscribe-button" target="_blank">اشترك الآن عبر واتساب</a>
   </section>
 
   <footer>
