@@ -21,20 +21,15 @@
     font-family: 'Cairo', sans-serif;
   }
 
-  body {
-    background-color: #fff8e1;
-    color: #333;
-    line-height: 1.6;
-  }
+ body {
+  background-color: #fffdf3; /* أبيض مائل للذهبي */
+  color: #2d2d2d; /* رمادي داكن للنص */
+}
 
-  header {
-    padding: 20px 40px;
-    background-color: #fff8e1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-  }
+header {
+  background-color: #fef6dc; /* ذهبي فاتح */
+  color: #000;
+}
 
   header h1 {
     font-size: 24px;
