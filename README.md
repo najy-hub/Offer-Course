@@ -5,54 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>عرض خاص - رحلة المهندس المحترف</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.bunny.net/bunny-player/v1.0.0/bunny.player.js" defer></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Cairo', sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
 
     body {
-      background: linear-gradient(to right, #fffbe6, #fffaf0);
+      background: #fffef5;
       color: #333;
       line-height: 1.6;
-      text-align: center;
     }
 
     header {
       padding: 20px 40px;
-      background-color: #f9f1d8;
-      border-bottom: 1px solid #e5d5a3;
+      background-color: #f5e9cc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
     }
 
-    header h1 {
-      font-size: 28px;
-      color: #6a4e13;
-    }
+    header h1 { font-size: 24px; color: #2c2c2c; }
 
     .hero {
-      padding: 60px 20px;
-      background-image: url('Images/hero.png');
-      background-size: cover;
-      background-position: center;
-      color: #4b390d;
+      position: relative;
+      background: #fff8dc;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 20px;
     }
 
     .hero h2 {
       font-size: 36px;
       margin-bottom: 20px;
+      color: #2a2a2a;
     }
 
     .hero p {
       font-size: 18px;
+      color: #4d4d4d;
       margin-bottom: 30px;
     }
 
     .hero a.button {
       padding: 12px 30px;
-      background-color: #e5b100;
+      background-color: #ffba00;
       color: #000;
       font-weight: bold;
       border: none;
@@ -62,20 +64,27 @@
       transition: background-color 0.3s;
     }
 
-    .hero a.button:hover {
-      background-color: #d9a400;
+    .hero a.button:hover { background-color: #ffaa00; }
+
+    #video {
+      padding: 60px 20px;
+      text-align: center;
     }
 
-    #bunny-player {
-      max-width: 800px;
-      margin: 40px auto;
-      aspect-ratio: 16/9;
+    iframe { max-width: 100%; border-radius: 12px; }
+
+    #countdown {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #ff9900;
+      font-weight: bold;
     }
 
-    #subscribeBtn {
+    .subscribe-button {
       display: none;
+      margin-top: 30px;
       padding: 15px 30px;
-      background-color: #e5b100;
+      background-color: #ffba00;
       color: #000;
       border: none;
       border-radius: 10px;
@@ -83,17 +92,17 @@
       font-weight: bold;
       cursor: pointer;
       text-decoration: none;
-      margin-top: 30px;
     }
 
-    #subscribeBtn:hover {
-      background-color: #d9a400;
+    .subscribe-button:hover {
+      background-color: #ffaa00;
     }
 
     footer {
-      background-color: #f2e8c6;
+      background-color: #f2f2f2;
+      text-align: center;
       padding: 20px;
-      color: #7a6b4d;
+      color: #777;
       font-size: 14px;
       margin-top: 60px;
     }
@@ -106,41 +115,66 @@
   </header>
 
   <section class="hero">
-    <h2>🎓 عرض خاص لمدة 48 ساعة</h2>
-    <p>ابدأ رحلتك الآن وشاهد المحاضرة المجانية الأولى في مجال الطاقة الشمسية</p>
-    <a href="#bunny-player" class="button">شــاهد الآن</a>
+    <div class="hero-content">
+      <h2>عرض خاص لمدة 48 ساعة</h2>
+      <p>شاهد المحاضرة وابدأ رحلتك نحو احتراف الطاقة الشمسية</p>
+      <a href="#video" class="button">شــاهد الآن</a>
+    </div>
   </section>
 
-  <div id="bunny-player"></div>
+  <section id="video">
+    <div id="countdown">00:00:00</div>
+    <div style="position:relative;padding-top:56.25%;">
+      <iframe src="https://iframe.mediadelivery.net/embed/460802/e8b012cb-f646-4d5d-b92d-937b028bdaa2?autoplay=false&loop=false&muted=false&preload=false&responsive=true"
+        loading="lazy"
+        style="border:0;position:absolute;top:0;height:100%;width:100%;"
+        allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+        allowfullscreen="true">
+      </iframe>
+    </div>
 
-  <a id="subscribeBtn" href="https://wa.me/201055690849" target="_blank">اشترك الآن عبر واتساب</a>
+    <a href="https://wa.me/201055690849" class="subscribe-button" target="_blank" id="subscribeBtn">اشترك الآن عبر واتساب</a>
+  </section>
 
   <footer>
     &copy; 2025 جميع الحقوق محفوظة - رحلة المهندس المحترف
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const player = new BunnyPlayer("#bunny-player", {
-        video: {
-          id: "e8b012cb-f646-4d5d-b92d-937b028bdaa2",
-          collection: "460802"
-        }
-      });
+    function startCountdown() {
+      const countdownEl = document.getElementById("countdown");
+      const subscribeBtn = document.getElementById("subscribeBtn");
 
-      let hasStarted = false;
-      let showButtonTimer;
+      let savedTime = localStorage.getItem("offer_expiry");
+      if (!savedTime) {
+        const expiryTime = new Date().getTime() + 48 * 60 * 60 * 1000;
+        localStorage.setItem("offer_expiry", expiryTime);
+        savedTime = expiryTime;
+      }
 
-      player.on("play", () => {
-        if (!hasStarted) {
-          hasStarted = true;
-          showButtonTimer = setTimeout(() => {
-            document.getElementById("subscribeBtn").style.display = "inline-block";
-          }, 8 * 60 * 1000); // 8 دقائق
+      const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = savedTime - now;
+
+        if (distance <= 0) {
+          clearInterval(interval);
+          countdownEl.textContent = "⛔ انتهى العرض!";
+          return;
         }
-      });
-    });
+
+        const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+        const minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+        const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+
+        countdownEl.textContent = `${hours}:${minutes}:${seconds}`;
+      }, 1000);
+
+      setTimeout(() => {
+        subscribeBtn.style.display = 'inline-block';
+      }, 8 * 60 * 1000); // 8 دقائق
+    }
+
+    window.onload = startCountdown;
   </script>
-
 </body>
 </html>
